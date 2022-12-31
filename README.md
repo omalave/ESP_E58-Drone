@@ -43,14 +43,14 @@ The drone can fly via the App as normal, while it is finally controlled by the i
 - The E58 drone can be operated via WiFi and the JYUfo App without major problems via an intermediate ESP8266 router (https://github.com/martin-ger/esp_wifi_repeater)
 - The Eachine E58 drone uses the WiFi protocol described here: https://blog.horner.tj/hacking-chinese-drones-for-fun-and-no-profit/
 ```
-    1st byte – Header: 66
-    2nd byte – Left/right movement (0-254, with 128 being neutral)
-    3rd byte – Forward/backward movement (0-254, with 128 being neutral)
-    4th byte – Throttle (elevation) (0-254, with 128 being neutral)
-    5th byte – Turning movement (0-254, with 128 being neutral)
-    6th byte – Reserved for commands (0 = no command)
-    7th byte – Checksum (XOR of bytes 2, 3, 4, and 5)
-    8th byte – Footer: 99
+    byte 0 – Header: 66
+    byte 1 – Left/right movement (0-254, with 128 being neutral)
+    byte 2 – Forward/backward movement (0-254, with 128 being neutral)
+    byte 3 – Throttle (elevation) (0-254, with 128 being neutral)
+    byte 4 – Turning movement (0-254, with 128 being neutral)
+    byte 5 – Reserved for commands (0 = no command)
+    byte 6 – Checksum (XOR of bytes 2, 3, 4, and 5)
+    byte 7 – Footer: 99
 
 Command Bits (can be ORed):
     01 – Auto Take-Off
